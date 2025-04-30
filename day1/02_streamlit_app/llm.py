@@ -22,7 +22,8 @@ def load_model():
             "text-generation",
             model=MODEL_NAME,
             model_kwargs={"torch_dtype": torch.bfloat16},
-            device=device
+            device=device,
+            token=hf_token
         )
         st.success(f"モデル '{MODEL_NAME}' の読み込みに成功しました。")
         return pipe
